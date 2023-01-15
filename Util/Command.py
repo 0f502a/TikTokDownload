@@ -35,7 +35,8 @@ class Command:
             description='TikTokTool V1.3.0.43 使用帮助')
         parser.add_argument('--uid', '-u', type=str,
                             help='为用户主页链接，非必要参数', required=False)
-        # parser.add_argument('--dir','-d', type=str,help='视频保存目录，非必要参数， 默认./Download', default='./Download/')
+        parser.add_argument('--path','-p', type=str,
+                            help='视频保存目录，非必要参数， 默认./Download', default='./Download/')
         # parser.add_argument('--single', '-s', type=str, help='单条视频链接，非必要参数，与--user参数冲突')
         parser.add_argument('--music', '-m', type=str,
                             help='视频音乐下载，非必要参数， 默认no可选yes', default='no')
@@ -57,13 +58,15 @@ class Command:
             self.uid = self.cfg.get('uid', 'uid')
             self.music = self.cfg.get('music', 'music')
             self.mode = self.cfg.get('mode', 'mode')
+            self.path = self.cfg.get('path', 'path')
             print('[  提示  ]:读取本地配置完成!\r')
         else:
             self.uid = args.uid
             self.music = args.music
             self.mode = args.mode
+            self.path = args.path
             print('[  提示  ]:读取命令完成!\r')
-        return [self.uid, self.music, self.mode]
+        return [self.uid, self.music, self.mode, self.path]
 
 
 if __name__ == '__main__':

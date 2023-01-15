@@ -107,8 +107,10 @@ class Profile():
                 self.sec, 35, self.max_cursor)
 
         # 创建用户文件夹
-        self.path = "." + self.sprit + "Download" + self.sprit + \
-            param[2] + self.sprit + self.nickname + self.sprit
+        # 构成规则：文件保存路径 + / + 下载模式(post|like) + / + 昵称
+        self.path = param[3] + self.sprit + \
+                    param[2] + self.sprit + \
+                    self.nickname + self.sprit
         if not Util.os.path.exists(self.path):
             Util.os.makedirs(self.path)
 
