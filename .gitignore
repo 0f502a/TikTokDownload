@@ -139,3 +139,4 @@ readconf.py
 .vscode
 
 logs/
+.idea/
