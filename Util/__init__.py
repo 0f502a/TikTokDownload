@@ -144,7 +144,7 @@ print("#" * 120)
 print('\r')
 
 if (platform.system() == 'Windows'):
-    sprit = '\\'
+    sprit = '/'
     # 💻
     print('[   💻   ]:Windows平台')
 elif (platform.system() == 'Linux'):
@@ -157,4 +157,4 @@ else:
     print('[   🍎   ]:MacOS平台')
 
 # 检查版本
-Updata().get_Updata()
+# Updata().get_Updata()
