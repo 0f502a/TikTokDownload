@@ -177,31 +177,30 @@ class Download():
                 print('[  提示  ]:该页视频资源没有35个,已为您跳过！\r')
                 break
 
-    def ImageDownload(self, datas):
+    def ImageDownload(self, profileData, imageDatas):
         self.check = Util.CheckInfo()
 
-        for i in range(len(datas)):
-            self.nickname = datas[i][0]
-            self.desc = Util.replaceT(datas[i][1])
+        for i in range(len(imageDatas)):
+            self.nickname = imageDatas[i][0]
+            self.desc = Util.replaceT(imageDatas[i][1])
             self.create_time = Util.time.strftime(
-                '%Y-%m-%d %H.%M.%S', Util.time.localtime(datas[i][2]))
-            self.position = datas[i][3]
-            self.number = datas[i][4]
-            self.images = datas[i][5]
-            self.sprit = Util.sprit
+                '%Y-%m-%d %H.%M.%S', Util.time.localtime(imageDatas[i][2]))
+            self.position = imageDatas[i][3]
+            self.number = imageDatas[i][4]
+            self.images = imageDatas[i][5]
+            self.sprit = sprit = Util.sprit
 
-            path = "Download" + self.sprit + "pic" + self.sprit + \
-                self.nickname + self.sprit + self.create_time + self.desc
+            path = profileData.path + sprit + \
+                   "pic" + sprit + \
+                   self.create_time + self.desc
             # 检测下载目录是否存在
             if not Util.os.path.exists(path):
                 Util.os.makedirs(path)
 
             for i in range(self.number):
                 # 图片目录
-                p_url = 'Download' + self.sprit + 'pic' + self.sprit + self.nickname + self.sprit + \
-                        self.create_time + self.desc + self.sprit + \
-                            self.create_time + self.desc + \
-                        '_' + str(i) + '.jpeg'
+                p_url = path + sprit + \
+                        self.create_time + self.desc + '_' + str(i) + '.jpeg'
                 # 检查图片下载情况
                 if Util.os.path.exists(p_url):
                     print('[  提示  ]: %s%s [文件已存在，为您跳过]' %

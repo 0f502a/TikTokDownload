@@ -272,7 +272,7 @@ class Profile():
         # 下载主页所有图集
         datas = Util.Images().get_all_images(self.image_list)
         Util.Download().VideoDownload(self)
-        Util.Download().ImageDownload(datas)
+        Util.Download().ImageDownload(self, datas)
         self.getNextData()
         return  # self,author_list,video_list,uri_list,aweme_id,nickname,max_cursor
 
