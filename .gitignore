@@ -133,7 +133,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-#¹ýÂË
+#ï¿½ï¿½ï¿½ï¿½
 /Download/
 readconf.py
 .vscode
+
+logs/
+.idea/

@@ -117,8 +117,10 @@ class Profile():
             self.api_post_url = self.urls.USER_FAVORITE_A + datas.params
 
         # 创建用户文件夹
-        self.path = "." + self.sprit + "Download" + self.sprit + \
-            param[2] + self.sprit + self.nickname + self.sprit
+        # 构成规则：文件保存路径 + / + 下载模式(post|like) + / + 昵称
+        self.path = param[3] + self.sprit + \
+                    param[2] + self.sprit + \
+                    self.nickname + self.sprit
         if not Util.os.path.exists(self.path):
             Util.os.makedirs(self.path)
 
@@ -289,7 +291,7 @@ class Profile():
         # 下载主页所有图集
         datas = Util.Images().get_all_images(self.image_list)
         Util.Download().VideoDownload(self)
-        Util.Download().ImageDownload(datas)
+        Util.Download().ImageDownload(self, datas)
         self.getNextData()
         return  # self,author_list,video_list,uri_list,aweme_id,nickname,max_cursor
 

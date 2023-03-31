@@ -49,8 +49,8 @@ class Config:
                 self.cf.set("uid", "uid", "https://v.douyin.com/JcjJ5Tq/")
                 self.cf.add_section("music")
                 self.cf.set("music", "music", "yes")
-                # self.cf.add_section("path")
-                # self.cf.set("path", "path", ".\\Download\\")
+                self.cf.add_section("path")
+                self.cf.set("path", "path", "./Download/")
                 self.cf.add_section("mode")
                 self.cf.set("mode", "mode", "post")
                 with open("conf.ini", "w") as f:
