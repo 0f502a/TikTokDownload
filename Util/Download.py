@@ -194,6 +194,5 @@ class Download():
                             print('[  错误  ]:%s\r' % error)
                             print('[  提示  ]:发生了点意外!\r')
 
-
 if __name__ == '__main__':
     Download()

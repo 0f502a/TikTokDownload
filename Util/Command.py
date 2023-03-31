@@ -57,7 +57,7 @@ class Command:
         """
         设置配置
         Returns:
-            tuple: 返回uid,music,mode,cookie,interval,update
+            tuple: 返回uid,music,mode,cookie,interval,update,path
         """
         args = self.argument()
         # 检测是否为命令行调用
