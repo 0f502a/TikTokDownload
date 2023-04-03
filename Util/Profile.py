@@ -289,7 +289,7 @@ class Profile():
         # 输出日志
         Util.log.info('[  提示  ]:正在替换作者非法字符，耐心等待!')
         # 下载主页所有图集
-        datas = Util.Images().get_all_images(self.image_list)
+        datas = Util.Images(self.headers).get_all_images(self.image_list)
         Util.Download().VideoDownload(self)
         Util.Download().ImageDownload(self, datas)
         self.getNextData()
