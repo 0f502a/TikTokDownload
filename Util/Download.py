@@ -17,6 +17,8 @@ Change Log  :
 
 import Util
 
+max_workers = 10
+
 
 class Download():
 
@@ -53,7 +55,7 @@ class Download():
         # self.v_info = profileData.v_info
         # self.profile = Profile()
         with Util.progress:
-            with Util.ThreadPoolExecutor(max_workers=10) as pool:
+            with Util.ThreadPoolExecutor(max_workers=max_workers) as pool:
                 for i in range(len(self.author_list)):
                     # 获取单部视频接口信息
                     try:
@@ -155,7 +157,7 @@ class Download():
 
     def ImageDownload(self, profileData, imageDatas):
         with Util.progress:
-            with Util.ThreadPoolExecutor(max_workers=10) as pool:
+            with Util.ThreadPoolExecutor(max_workers=max_workers) as pool:
                 for i in range(len(imageDatas)):
                     self.nickname = imageDatas[i][0]
                     self.desc = Util.replaceT(imageDatas[i][1])

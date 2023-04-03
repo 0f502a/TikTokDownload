@@ -85,7 +85,7 @@ class Profile():
             url=self.urls.USER_POST + datas.params, headers=self.headers, timeout=3)
 
         if response.text == '':
-            input('[  提示  ]:获取用户数据失败，请从web端获取新ttwid填入配置文件\r')
+            input('[  提示  ]:获取用户数据失败，请从web端获取新ttwid填入配置文件，按任意键退出。\r')
             exit()
 
         post_name_json = Util.json.loads(response.content.decode())
@@ -118,7 +118,7 @@ class Profile():
 
         # 创建用户文件夹
         # 构成规则：文件保存路径 + / + 下载模式(post|like) + / + 昵称
-        self.path = param[3] + self.sprit + \
+        self.path = param[-1] + self.sprit + \
                     param[2] + self.sprit + \
                     self.nickname + self.sprit
         if not Util.os.path.exists(self.path):
