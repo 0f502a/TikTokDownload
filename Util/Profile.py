@@ -53,7 +53,6 @@ class Profile():
             r = Util.requests.post(url=Util.reFind(param[0])[0])
         except:
             print('[  提示  ]:请检查你的配置链接填写是否正确!\r')
-            input('[  提示  ]：按任意键退出程序!\r')
             exit()
 
         print('[  提示  ]:批量获取所有视频中!\r')
@@ -87,7 +86,7 @@ class Profile():
             url=self.urls.USER_POST + datas.params, headers=self.headers, timeout=3)
 
         if response.text == '':
-            input('[  提示  ]:获取用户数据失败，请从web端获取新ttwid填入配置文件，按任意键退出。\r')
+            print("[  提示  ]:获取用户数据失败，请从web端获取新ttwid填入配置文件。")
             exit()
 
         post_name_json = Util.json.loads(response.content.decode())

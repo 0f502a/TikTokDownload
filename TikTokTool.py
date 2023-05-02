@@ -31,6 +31,5 @@ if __name__ == '__main__':
     # 使用参数并下载
     profile.getProfile(cmd.setting())
 
-    # input('[  完成  ]:已完成批量下载，输入任意键后退出:')
     print("[  完成  ]:已完成批量下载")
     exit(0)
