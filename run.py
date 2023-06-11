@@ -3,6 +3,7 @@
 import Util
 import os
 import time
+from datetime import datetime
 import random
 
 
@@ -18,10 +19,10 @@ if __name__ == "__main__":
     interval = cfg.get('interval', 'interval')
     update = cfg.get('update', 'update')
 
-    sleep_secs = 5
+    sleep_secs = 2
 
     users = list()
-    with open('uid_list0502.txt', 'r', encoding='utf8') as f:
+    with open('uid_list.txt', 'r', encoding='utf8') as f:
         for line in f.readlines():
             line = line.strip().split('\t')
             users.append(
@@ -31,7 +32,7 @@ if __name__ == "__main__":
 
     for i, (uid, uname) in enumerate(users):
         print(">>>")
-        print(f"   下载进度: {i+1}/{len(users)}, 正在下载用户[{uname} - {uid}]")
+        print(f"   [{datetime.now()}]下载进度: {i+1}/{len(users)}, 正在下载用户[{uname} - {uid}]")
 
         # python TikTokTool.py --uid "https://v.douyin.com/DgYeM6G/" --path "../Download/" --mode "post" 
         os.system(f'python TikTokTool.py --uid {uid} --path {path} --mode {mode} --cookie "{cookie}"')
