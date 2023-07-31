@@ -106,7 +106,7 @@ class Profile():
             Util.log.error(e)
             # ERROR: list index out of range
             # {'status_code': 0, 'aweme_list': [], 'max_cursor': 0, 'min_cursor': xxx, 'extra': {'now': xxx, 'logid': 'xxx'}, 'has_more': False}
-            input('[  提示  ]：按任意键退出程序!\r')
+            # input('[  提示  ]：按任意键退出程序!\r')
             exit()
 
         # 构造第一次访问链接
