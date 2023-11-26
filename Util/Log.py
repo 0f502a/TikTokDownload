@@ -5,7 +5,7 @@
 @Date       :2022/08/17 00:10:38
 @Author     :JohnserfSeed
 @version    :1.0
-@License    :(C)Copyright 2019-2022, Liugroup-NLPR-CASIA
+@License    :MIT License
 @Github     :https://github.com/johnserf-seed
 @Mail       :johnserfseed@gmail.com
 -------------------------------------------------
@@ -30,7 +30,7 @@ class Log(object):
         self.logname = Util.os.path.join(log_path, '%s.log' % Util.time.strftime(
             "%Y-%m-%d_%H%M%S", Util.time.localtime()))
         Util.logging.basicConfig()
-        self.logger = Util.logging.getLogger("TikTokMultiDownloader")
+        self.logger = Util.logging.getLogger("TikTokDownload")
         self.logger.setLevel(Util.logging.INFO)
         self.logger.propagate = False
         # 日志输出格式
