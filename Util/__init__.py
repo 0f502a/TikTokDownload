@@ -141,12 +141,12 @@ table.add_row(__version__.__help__)
 
 console = Console()
 console = rich.console.Console(color_system="truecolor")
-console.print(f"{__version__.__logo__}", justify="center")
-console.print(f"\n:rocket: [bold]TikTokDownload [bright_yellow]{__version__.__version__}[/bright_yellow] :rocket:", justify="center")
-console.print(f":zap: [i]{__version__.__description_cn__} :zap:", justify="center")
-console.print(f":fire: [i]{__version__.__description_en__} :fire:", justify="center")
-console.print(f":computer: [i]Repo {__version__.__repourl__} :computer:\n", justify="center")
-console.print(Panel(table, border_style="bold", title="使用说明"))
+# console.print(f"{__version__.__logo__}", justify="center")
+# console.print(f"\n:rocket: [bold]TikTokDownload [bright_yellow]{__version__.__version__}[/bright_yellow] :rocket:", justify="center")
+# console.print(f":zap: [i]{__version__.__description_cn__} :zap:", justify="center")
+# console.print(f":fire: [i]{__version__.__description_en__} :fire:", justify="center")
+# console.print(f":computer: [i]Repo {__version__.__repourl__} :computer:\n", justify="center")
+# console.print(Panel(table, border_style="bold", title="使用说明"))
 
 
 progress = Progress(

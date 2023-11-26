@@ -507,5 +507,5 @@ class Profile:
         except Exception as e:
             Util.progress.console.print(f'[  提示  ]:异常，{e}')
             Util.log.error(f'[  提示  ]:异常，{e}，{Util.traceback.format_exc()}')
-            input('[  提示  ]：按任意键退出程序!\r')
-            exit(0)
+            # input('[  提示  ]：按任意键退出程序!\r')
+            exit(1)

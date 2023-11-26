@@ -41,7 +41,7 @@ class Command:
             description='TikTokTool V1.4.2.2 使用帮助')
         parser.add_argument('--uid', '-u', type=str,
                             help='为用户主页链接，支持长短链', required=False)
-        parser.add_argument('--save','-s', type=str,help='视频保存目录，非必要参数， 默认Download', default='Download')
+        parser.add_argument('--path','-p', type=str,help='视频保存目录，非必要参数， 默认Download', default='Download')
         # parser.add_argument('--single', '-s', type=str, help='单条视频链接，非必要参数，与--user参数冲突')
         parser.add_argument('--music', '-m', type=str,
                             help='是否下载视频原声， 默认no 可选yes', default='no')

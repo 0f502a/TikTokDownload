@@ -26,4 +26,3 @@ if __name__ == '__main__':
 
     # 异步下载作品
     Util.asyncio.run(Util.Profile(config, dyheaders).get_Profile())
-    input("[  提示  ]:下载完成，输入任意键退出。")
