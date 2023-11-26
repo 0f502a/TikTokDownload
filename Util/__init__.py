@@ -39,6 +39,7 @@ from functools import partial
 from typing import Union, Optional
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from datetime import datetime
 
 # 第三方库
 import aiohttp
@@ -80,7 +81,9 @@ from . import __version__
 
 
 # 日志记录
-log = Log()
+
+dt = datetime.now().strftime("%Y-%m-%d")
+log = Log(file_name=f"detail_{dt}.log")
 
 def replaceT(obj):
     """
@@ -186,4 +189,4 @@ else:
 
 
 # 输出操作系统版本
-log.info(platform.system())
+# log.info(platform.system())

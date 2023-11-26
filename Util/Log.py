@@ -15,20 +15,24 @@ Change Log  :
 
 import Util
 
-# 创建logs文件夹
-cur_path = Util.os.path.abspath(
-    Util.os.path.join(Util.os.path.dirname("__file__")))
-log_path = Util.os.path.join(cur_path, 'logs')
-# 如果不存在这个logs文件夹，就自动创建一个
-if not Util.os.path.exists(log_path):
-    Util.os.mkdir(log_path)
+def init():
+    # 创建logs文件夹
+    cur_path = Util.os.path.abspath(
+        Util.os.path.join(Util.os.path.dirname("__file__")))
+    log_path = Util.os.path.join(cur_path, 'logs')
+    # 如果不存在这个logs文件夹，就自动创建一个
+    if not Util.os.path.exists(log_path):
+        Util.os.mkdir(log_path)
+    return log_path, cur_path
 
 
 class Log(object):
-    def __init__(self):
+    def __init__(self, file_name=None, file_path=None):
+        log_path, _ = init()
+        log_path = file_path if file_path else log_path
+        log_name = file_name if file_name else '%s.log' % Util.time.strftime("%Y-%m-%d", Util.time.localtime())
         # 文件的命名
-        self.logname = Util.os.path.join(log_path, '%s.log' % Util.time.strftime(
-            "%Y-%m-%d_%H%M%S", Util.time.localtime()))
+        self.logname = Util.os.path.join(log_path, log_name)
         Util.logging.basicConfig()
         self.logger = Util.logging.getLogger("TikTokDownload")
         self.logger.setLevel(Util.logging.INFO)
